@@ -1,4 +1,4 @@
-# 🚨 Incident Response & SOC Playbook – Hands-On Project
+# 🚨 Incident Response & SOC Playbook
 
 ## 📌 Project Overview
 This project demonstrates **end-to-end Incident Response handling** performed by a SOC Analyst.  
