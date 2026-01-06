@@ -1,0 +1,62 @@
+========================================
+INVESTIGATION COMMANDS – SSH BRUTE FORCE
+========================================
+
+Purpose:
+These commands were used to investigate an SSH brute-force attack
+by analyzing Linux authentication logs.
+
+----------------------------------------
+1. Verify SSH Service Status
+----------------------------------------
+sudo systemctl status ssh
+
+----------------------------------------
+2. View Full Authentication Log
+----------------------------------------
+sudo less /var/log/auth.log
+
+----------------------------------------
+3. Identify Failed SSH Login Attempts
+----------------------------------------
+sudo grep "Failed password" /var/log/auth.log
+
+----------------------------------------
+4. Extract Source IP Addresses
+----------------------------------------
+sudo grep "Failed password" /var/log/auth.log | awk '{print $(NF-3)}'
+
+----------------------------------------
+5. Count Failed Attempts Per IP
+----------------------------------------
+sudo grep "Failed password" /var/log/auth.log | awk '{print $(NF-3)}' | sort | uniq -c | sort -nr
+
+----------------------------------------
+6. Identify Targeted Usernames
+----------------------------------------
+sudo grep "Failed password" /var/log/auth.log | awk '{print $(NF-5)}' | sort | uniq -c | sort -nr
+
+----------------------------------------
+7. Check for Successful SSH Logins
+----------------------------------------
+sudo grep "Accepted password" /var/log/auth.log
+
+----------------------------------------
+8. Filter Logs by Specific IP
+----------------------------------------
+sudo grep "<MALICIOUS_IP>" /var/log/auth.log
+
+----------------------------------------
+9. Check Login Attempts Timeline
+----------------------------------------
+sudo grep "Failed password" /var/log/auth.log | head
+sudo grep "Failed password" /var/log/auth.log | tail
+
+----------------------------------------
+10. Block Malicious IP (Containment)
+----------------------------------------
+sudo ufw deny from <MALICIOUS_IP>
+
+----------------------------------------
+End of Investigation Commands
+----------------------------------------
