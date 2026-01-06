@@ -82,12 +82,12 @@ No successful login was observed, and the attack was contained by blocking the m
 
 ### Immediate Actions Taken
 - Blocked malicious IP using firewall
-```bash
-sudo ufw deny from <MALICIOUS_IP>
+  
+       sudo ufw deny from <MALICIOUS_IP>
 
 
 
-Preventive Measures Recommended
+### Preventive Measures Recommended
 
 Enable SSH key-based authentication
 
@@ -152,16 +152,3 @@ Aspiring SOC Analyst | Cybersecurity Enthusiast
 
 ---
 
-### 🔥 You are now DONE with this project
-You now have:
-- ✅ README.md  
-- ✅ incident-report.md  
-- ✅ soc-playbook-ssh-bruteforce.md  
-- ✅ investigation-commands.txt  
-
-👉 Next, I highly recommend:
-1️⃣ **Mock SOC interview questions from THIS project**  
-2️⃣ **Splunk version of the same incident**  
-3️⃣ **GitHub review to improve recruiter impact**
-
-Just tell me what’s next 👌
